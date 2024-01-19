@@ -5,7 +5,7 @@ const users = require("../models/users");
 const registerController = async (req, res) => {
   try {
     const { userName, password } = req.body;
-    if (!(userName || password)) {
+    if (!(userName && password)) {
       res.status(400);
       res.send({
         success: false,
